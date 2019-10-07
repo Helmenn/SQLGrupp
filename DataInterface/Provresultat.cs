@@ -20,7 +20,8 @@ namespace SQL
 
         public int Fel { get; set; }
 
-        
+        public int provsvarID { get; set; }
+        public Provsvar Provsvar { get; set; }
     }
 
 }
