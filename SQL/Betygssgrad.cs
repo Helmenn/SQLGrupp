@@ -13,5 +13,6 @@ namespace SQL
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 
         public int BetygssgradID { get; set; }
+
     }
 }
