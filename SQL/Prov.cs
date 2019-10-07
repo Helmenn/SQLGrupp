@@ -16,5 +16,10 @@ namespace SQL
         public int ProvID { get; set; }
 
         public int Andel { get; set; }
+
+        public Courses CourseId {get; set;}
+
+        public Courses Courses { get; set; }
+
     }
 }
