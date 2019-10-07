@@ -1,7 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
-
-namespace SQL
+﻿namespace SQL
 {
     class Program
     {
