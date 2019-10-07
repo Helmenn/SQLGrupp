@@ -18,7 +18,7 @@ namespace SQL
         public int Poäng { get; set; }
       
 
-        public int provsvarID { get; set; }
+        public int ProvsvarID { get; set; }
         public Provsvar Provsvar { get; set; }
     }
 
