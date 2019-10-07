@@ -8,19 +8,21 @@ using Microsoft.EntityFrameworkCore;
 
 namespace SQL
 {
-    public class Provresultat
+    public class RättatSvar
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 
-        public int ProvresultatID { get; set; }
+        public int RättatSvarID { get; set; }
+        public int SvarID { get; set; }
+        public Svar Svar { get; set; }
+        public int SvaraltID {get; set;}
+        public Svaralt Svaralt { get; set; }
 
-        public int Poäng { get; set; }
-      
+        public bool Rätt { get; set; }
+           
 
-        public int provsvarID { get; set; }
-        public Provsvar Provsvar { get; set; }
+
+
     }
-
 }
-
