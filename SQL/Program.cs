@@ -101,20 +101,6 @@ namespace SQL
 
                 #endregion
 
-                #region Lärare
-                var teacher = new Teacher();
-                teacher.TeacherName = "lärare1";
-                schoolContext.Teachers.Add(teacher);
-
-                teacher = new Teacher();
-                teacher.TeacherName = "lärare2";
-                schoolContext.Teachers.Add(teacher);
-
-                teacher = new Teacher();
-                teacher.TeacherName = "lärare3";
-                schoolContext.Teachers.Add(teacher);
-                schoolContext.SaveChanges();
-                #endregion
             }
         }
         static void Main(string[] args)
