@@ -15,5 +15,17 @@ namespace SQL
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<StudentCourse> StudentCourses { get; set; }
         public DbSet<Grades> Grades { get; set; }
+
+
+        public DbSet<Betygssgrad> Betygssgrad { get; set; }
+        public DbSet<Fråga> Fråga { get; set; }
+        public DbSet<Prov> Prov { get; set; }
+        public DbSet<Provsvar> Provsvar { get; set; }
+        public DbSet<Svar> Svar { get; set; }
+        public DbSet<Svaralt> Svaralt { get; set; }
+        public DbSet<Provresultat> Provresultat { get; set; }
+
     }
+
+
 }
