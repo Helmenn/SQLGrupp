@@ -19,6 +19,9 @@ namespace SQL
         public int Rätt { get; set; }
 
         public int Fel { get; set; }
+
+        
     }
+
 }
 

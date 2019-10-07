@@ -15,5 +15,9 @@ namespace SQL
         public int FrågaID { get; set; }
 
         public string FrågText { get; set; }
+
+        public int ProvID { get; set; }
+        public Prov Prov { get; set; }
+
     }
 }

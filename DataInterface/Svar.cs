@@ -13,5 +13,14 @@ namespace SQL
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 
         public int SvarID { get; set; }
+
+        public int provsvarID { get; set; }
+        public Provsvar Provsvar { get; set; }
+
+        public int FrågaID { get; set; }
+        public Fråga Fråga { get; set; }
+
+        public int SvaraltID { get; set; }
+        public Svaralt svaralt { get; set; }
     }
 }

@@ -16,6 +16,9 @@ namespace SQL
 
         public string SvaraltText { get; set; }
         public bool Rätt { get; set; }
+
+        public int FrågaID { get; set; }
+        public Fråga Fråga { get; set; }
     }
 
 }

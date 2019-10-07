@@ -14,5 +14,8 @@ namespace SQL
 
         public int BetygssgradID { get; set; }
 
+        public int CourseID { get; set; }
+        public Courses Couses { get; set; }
+
     }
 }
