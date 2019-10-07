@@ -2,6 +2,8 @@
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Collections.Generic;
+using DataInterface;
+using DataAccess;
 
 namespace SQL
 {
@@ -11,32 +13,6 @@ namespace SQL
         {
             using (var schoolContext = new SchoolContext())
             {
-
-                #region Kurser
-                var courses = new Courses();
-                courses.CourseName = "C#";
-                courses.CourseRoom = 101;
-                courses.TeacherID = 1;
-                schoolContext.Courses.Add(courses);
-
-                courses = new Courses();
-                courses.CourseName = ".NET";
-                courses.CourseRoom = 102;
-                courses.TeacherID = 2;
-                schoolContext.Courses.Add(courses);
-
-                courses = new Courses();
-                courses.CourseName = "HTML";
-                courses.CourseRoom = 103;
-                courses.TeacherID = 3;
-                schoolContext.Courses.Add(courses);
-
-                courses = new Courses();
-                courses.CourseName = "CSS";
-                courses.CourseRoom = 104;
-                courses.TeacherID = 3;
-                schoolContext.Courses.Add(courses);
-                #endregion
 
                 #region Studentnamn
                 var student = new Student();
@@ -102,6 +78,11 @@ namespace SQL
                 #endregion
 
             }
+
+            ITeacherManager teacherManager = new TeacherManager();
+
+            teacherManager.AddTeacher("A");
+
         }
         static void Main(string[] args)
         {
