@@ -16,9 +16,11 @@ namespace SQL
         public int ProvresultatID { get; set; }
 
         public int Poäng { get; set; }
-        public int Rätt { get; set; }
+      
 
-        public int Fel { get; set; }
+        public int provsvarID { get; set; }
+        public Provsvar Provsvar { get; set; }
     }
+
 }
 
