@@ -15,7 +15,7 @@ namespace SQL
         public int SvaraltID { get; set; }
 
         public string SvaraltText { get; set; }
-        public string Rätt { get; set; }
+        public bool Rätt { get; set; }
     }
 
 }

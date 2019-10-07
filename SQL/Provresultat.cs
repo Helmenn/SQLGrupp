@@ -16,7 +16,9 @@ namespace SQL
         public int ProvresultatID { get; set; }
 
         public int Poäng { get; set; }
-        public bool rättFel { get; set; }
+        public int Rätt { get; set; }
+
+        public int Fel { get; set; }
     }
 }
 
