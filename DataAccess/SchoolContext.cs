@@ -4,7 +4,7 @@ namespace SQL
 {
     public class SchoolContext : DbContext
     {
-        private const string connectionString = "Server=localhost;Database=KurserEleverCodeFirst;Trusted_Connection=True";
+        private const string connectionString = "Server=localhost;Database=KurserElevCodeFirst;Trusted_Connection=True";
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
