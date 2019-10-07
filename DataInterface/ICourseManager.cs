@@ -7,5 +7,7 @@ namespace DataInterface
     public interface ICourseManager
     {
         public void AddCourse(string name, int roomid, int teacherid);
+        public void RemoveCourse(int courseid);
+
     }
 }
