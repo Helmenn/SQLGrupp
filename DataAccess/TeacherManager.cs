@@ -1,4 +1,6 @@
 ﻿using DataInterface;
+using Microsoft.EntityFrameworkCore;
+using SQL;
 using System;
 
 namespace DataAccess
@@ -7,7 +9,12 @@ namespace DataAccess
     {
         public void AddTeacher(string teacherName)
         {
-            throw new NotImplementedException();
+            using (var schoolContext = new SchoolContext())
+            {
+                var teacher = new Teacher();
+                teacher.TeacherName = teacherName;
+                schoolContext.Teachers.Add(teacher);
+            }
         }
     }
 }
