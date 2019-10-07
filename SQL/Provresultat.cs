@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace SQL
 {
-    public class Provreslutat
+    public class Provresultat
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
