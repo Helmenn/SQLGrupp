@@ -3,7 +3,7 @@ using System;
 
 namespace DataAccess
 {
-    public class Teacher : ITeacher
+    public class TeacherManager : ITeacherManager
     {
         public void AddTeacher(string teacherName)
         {
