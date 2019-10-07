@@ -17,7 +17,7 @@ namespace SQL
 
         public int Andel { get; set; }
 
-        public Courses CourseId {get; set;}
+        public int CourseId {get; set;}
 
         public Courses Courses { get; set; }
 
