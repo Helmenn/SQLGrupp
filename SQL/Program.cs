@@ -1,15 +1,17 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
+using System.Collections.Generic;
 
 namespace SQL
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Inmatning()
         {
-            using(var schoolContext = new SchoolContext())
+            using (var schoolContext = new SchoolContext())
             {
-                
+
                 #region Kurser
                 var courses = new Courses();
                 courses.CourseName = "C#";
@@ -113,18 +115,21 @@ namespace SQL
                 schoolContext.Teachers.Add(teacher);
                 schoolContext.SaveChanges();
                 #endregion
-                
-                /*
-                var studentsInCourseOne = (from s in schoolContext.Students
-                                           join c in schoolContext.Courses
-                                           on s.CourseID equals c.CourseID
-                                           where c.Name == "Kurs"
-                                           select s);
+            }
+        }
+        static void Main(string[] args)
+        {
+            using(var schoolContext = new SchoolContext())
+            {
 
-                foreach (var studentInClass in studentsInCourseOne)
-                    Console.WriteLine(studentInClass.Name);
-                Console.ReadLine();
-                */
+                var allaKurserFörStudent = (from Students in schoolContext.Students
+                                            join StudentCourse in schoolContext.StudentCourses on Students.StudentID equals StudentCourse.StudentID
+                                            join Courses in schoolContext.Courses on StudentCourse.CourseID equals Courses.CourseID
+                                            where StudentCourse.StudentID == int.Parse(Console.ReadLine())
+                                            select Courses);
+
+                foreach (var kurs in allaKurserFörStudent)
+                    Console.WriteLine(kurs.CourseName);
             }
         }
     }
