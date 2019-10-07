@@ -5,17 +5,20 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
 
+
 namespace SQL
 {
-    public class Svaralt
+    public class Provresultat
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
 
-        public int SvaraltID { get; set; }
+        public int ProvresultatID { get; set; }
 
-        public string SvaraltText { get; set; }
-        public string Rätt { get; set; }
+        public int Poäng { get; set; }
+        public int Rätt { get; set; }
+
+        public int Fel { get; set; }
     }
-
 }
+

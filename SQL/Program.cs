@@ -104,6 +104,7 @@ namespace SQL
                 #region Lärare
                 var teacher = new Teacher();
                 teacher.TeacherName = "lärare1";
+
                 schoolContext.Teachers.Add(teacher);
 
                 teacher = new Teacher();
