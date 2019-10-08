@@ -12,15 +12,7 @@ namespace DataAccess
             using (var schoolContext = new SchoolContext())
             {
                 var teacher = new Teacher();
-                teacher.TeacherName = "Sten";
-                schoolContext.Teachers.Add(teacher);
-
-                teacher = new Teacher();
-                teacher.TeacherName = "Anna";
-                schoolContext.Teachers.Add(teacher);
-
-                teacher = new Teacher();
-                teacher.TeacherName = "siv";
+                teacher.TeacherName = teacherName;
                 schoolContext.Teachers.Add(teacher);
             }
         }
