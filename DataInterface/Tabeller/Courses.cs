@@ -12,5 +12,8 @@ namespace SQL
         public int CourseRoom { get; set; }
         public int TeacherID { get; set; }
        
+        public Teacher Teacher { get; set; }
+
+            
     }
 }
