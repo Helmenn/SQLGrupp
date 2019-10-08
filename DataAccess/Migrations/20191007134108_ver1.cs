@@ -248,13 +248,13 @@ namespace DataAccess.Migrations
                         column: x => x.SvaraltID,
                         principalTable: "Svaralt",
                         principalColumn: "SvaraltID",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
                         name: "FK_Svar_Provsvar_provsvarID",
                         column: x => x.provsvarID,
                         principalTable: "Provsvar",
                         principalColumn: "ProvsvarID",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateIndex(
