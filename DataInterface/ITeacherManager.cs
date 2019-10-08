@@ -7,5 +7,6 @@ namespace DataInterface
     public interface ITeacherManager
     {
         public void AddTeacher(string teacherName);
+        public Teacher GetTeacherByID(int TeacherID)
     }
 }
