@@ -6,6 +6,6 @@ namespace DataInterface
 {
    public interface IStudentManager
     {
-        public void AddStudent(string Name, int CourseID);
+        public void AddStudent(string StudentName, int StudentAge);
     }
 }
