@@ -5,9 +5,8 @@ using System.Text;
 
 namespace DataInterface
 {
-    public interface ICourseManager
+    public interface IGradesManager
     {
-        public void AddCourse(string name, int roomid, Teacher teacher);
-
+        public void AddGrade(string gradeName, Courses course, Student student);
     }
 }
