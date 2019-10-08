@@ -102,8 +102,11 @@ namespace SQL
             StudentManger.AddStudent("Sten", 20);
             StudentManger.AddStudent("Rasmus", 21);
         
-
-
+            // Sedan blir det meckigt att få till kopplingen mellan student och kurs, tycker vi.
+            // Vi saknar den direkta kopplingen till student och kurs, så att vi enkelt kan lägga
+            // En elev på en kurs, tycker vi.
+            // Vi kan ju skapa en metod som hämtar studentID och kursID med hjälp av namnen på kurs
+            // respektive student, men det känns ju inte helt "rätt" väg att gå.
         }
         static void Main(string[] args)
         {
