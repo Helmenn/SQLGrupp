@@ -86,6 +86,11 @@ namespace SQL
         }
         static void Main(string[] args)
         {
+            IProvManager provManager = new ProvManager();
+
+
+            provManager.RättaProv();
+            /*
             using(var schoolContext = new SchoolContext())
             {
 
@@ -97,7 +102,8 @@ namespace SQL
 
                 foreach (var kurs in allaKurserFörStudent)
                     Console.WriteLine(kurs.CourseName);
-            }
+                    
+            }*/
         }
     }
 }

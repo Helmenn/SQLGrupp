@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQL;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -7,5 +8,7 @@ namespace DataInterface
     public interface IProvManager
     {
         public void AddProv(int Andel, int CourseID, int ProvresultatID, int ProvsvarID,int RättatSvarID,int SvarID,int SvarAltID,int FrågaID);
+
+        public void RättaProv(Prov prov, Student student);
     }
 }
