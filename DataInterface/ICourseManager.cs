@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQL;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,7 +7,7 @@ namespace DataInterface
 {
     public interface ICourseManager
     {
-        public void AddCourse(string name, int roomid, int teacherid);
+        public void AddCourse(string name, int roomid, Teacher teacher);
 
     }
 }

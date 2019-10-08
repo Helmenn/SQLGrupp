@@ -7,14 +7,14 @@ namespace DataAccess
 {
     public class GradesManager
     {
-        public void AddGrade(string gradeName, int courseID, int studentID)
+        public void AddGrade(string gradeName, Courses course, Student student)
         {
             using (var schoolContext = new SchoolContext())
             {
                 var grade = new Grades();
                 grade.GradesName = gradeName;
-                grade.CourseID = courseID;
-                grade.StudentID = studentID;
+                grade.CourseID = course.CourseID;
+                grade.StudentID = student.StudentID;
                 schoolContext.Grades.Add(grade);
             }
         }
