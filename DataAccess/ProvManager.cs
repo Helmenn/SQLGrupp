@@ -9,11 +9,14 @@ namespace DataAccess
     public class ProvManager : IProvManager
 
     {
-        public void AddProv(int Andel, int CourseID, int ProvresultatID, int ProvsvarID, int RättatSvarID, int SvarID, int SvarAltID, int FrågaID)
+        public void AddProv(int Andel, int CourseID)
         {
             using (var schoolContext = new SchoolContext())
             {
-                
+                var Prov = new Prov();
+                Prov.Andel = Andel;
+                Prov.CourseId = CourseID;
+                schoolContext.Prov.Add(Prov);
             }
         }
     }
