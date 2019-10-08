@@ -87,6 +87,23 @@ namespace SQL
             teacherManager.AddTeacher("Anna");
             teacherManager.AddTeacher("Siv");
             teacherManager.AddTeacher("Albert");
+
+
+            IStudentManager StudentManger = new StudentManager();
+            StudentManger.AddStudent("Adam", 19);
+            StudentManger.AddStudent("Amanda", 23);
+            StudentManger.AddStudent("Andreas", 37);
+            StudentManger.AddStudent("Anna", 27);
+            StudentManger.AddStudent("Alan", 30);
+            StudentManger.AddStudent("Anika", 23);
+            StudentManger.AddStudent("Håkan", 19);
+            StudentManger.AddStudent("Simon", 23);
+            StudentManger.AddStudent("Samuel", 32);
+            StudentManger.AddStudent("Sten", 20);
+            StudentManger.AddStudent("Rasmus", 21);
+        
+
+
         }
         static void Main(string[] args)
         {
