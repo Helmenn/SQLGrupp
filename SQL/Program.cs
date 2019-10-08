@@ -86,6 +86,8 @@ namespace SQL
         }
         static void Main(string[] args)
         {
+            
+            /*
             using(var schoolContext = new SchoolContext())
             {
 
@@ -97,7 +99,8 @@ namespace SQL
 
                 foreach (var kurs in allaKurserFörStudent)
                     Console.WriteLine(kurs.CourseName);
-            }
+                    
+            }*/
         }
     }
 }
