@@ -13,29 +13,10 @@ namespace DataAccess
         {
             using (var schoolContext = new SchoolContext())
             {
+
                 var Student = new Student();
-                Student.StudentName = "Mark";
-                Student.StudentAge = 19;
-                schoolContext.Students.Add(Student);
-
-                Student = new Student();
-                Student.StudentName = "Anna";
-                Student.StudentAge = 20;
-                schoolContext.Students.Add(Student);
-
-                Student = new Student();
-                Student.StudentName = "Hanna";
-                Student.StudentAge = 27;
-                schoolContext.Students.Add(Student);
-
-                Student = new Student();
-                Student.StudentName = "Manne";
-                Student.StudentAge = 23;
-                schoolContext.Students.Add(Student);
-
-                Student = new Student();
-                Student.StudentName = "Sara";
-                Student.StudentAge = 20;
+                Student.StudentName = Name;
+                Student.StudentAge = StudentAge;
                 schoolContext.Students.Add(Student);
 
 
