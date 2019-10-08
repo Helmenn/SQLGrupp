@@ -1,8 +1,9 @@
 ﻿using DataInterface;
 using SQL;
 using System;
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
 using System.Collections.Generic;
-using System.Text;
 
 namespace DataAccess
 {
@@ -19,5 +20,33 @@ namespace DataAccess
                 schoolContext.Prov.Add(Prov);
             }
         }
+
+        public Prov GetProv(int id)
+        {
+            using (var schoolContext = new SchoolContext())
+            {
+                var prov = from _prov in schoolContext.Prov
+                           where _prov.ProvID == id
+                           select _prov;
+                return prov.First();
+            }
+        }
+
+        public void RättaProv(Prov prov, Student student)
+        {
+            using (var schoolContext = new SchoolContext())
+            {
+                var allaFrågorFörProv = from frågor in schoolContext.Frågor
+                                        where frågor.Prov == prov
+                                        select frågor;
+                foreach(var fråga in allaFrågorFörProv)
+                {
+                    Console.WriteLine(fråga.FrågText);
+                }
+            }
+        }
+
+
+
     }
 }
