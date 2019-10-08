@@ -18,7 +18,7 @@ namespace SQL
 
 
         public DbSet<Betygssgrad> Betygssgrad { get; set; }
-        public DbSet<Fråga> Frågor { get; set; }
+        public DbSet<Fråga> Fråga { get; set; }
         public DbSet<Prov> Prov { get; set; }
         public DbSet<Provsvar> Provsvar { get; set; }
         public DbSet<Svar> Svar { get; set; }

@@ -86,7 +86,14 @@ namespace SQL
         }
         static void Main(string[] args)
         {
-            
+            IStudentManager studentManager = new StudentManager();
+            IProvManager provManager = new ProvManager();
+
+            Prov testProv = provManager.GetProv(2);
+            Student testStudent = studentManager.GetStudentByID(1);
+
+            provManager.RättaProv(testProv, testStudent);
+
             /*
             using(var schoolContext = new SchoolContext())
             {

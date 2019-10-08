@@ -9,5 +9,6 @@ namespace DataInterface
     {
         public void AddProv(int Andel, int CourseID);
         public void RättaProv(Prov prov, Student student);
+        public Prov GetProv(int id);
     }
 }

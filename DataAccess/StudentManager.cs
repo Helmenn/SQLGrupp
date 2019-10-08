@@ -1,8 +1,9 @@
 ﻿using DataInterface;
 using SQL;
 using System;
+using Microsoft.EntityFrameworkCore;
+using System.Linq;
 using System.Collections.Generic;
-using System.Text;
 
 
 namespace DataAccess
@@ -41,6 +42,18 @@ namespace DataAccess
 
             }
         }
+    
+        public Student GetStudentByID(int studentID)
+        {
+            using (var schoolContext = new SchoolContext())
+            {
+                var student = from _student in schoolContext.Students
+                              where _student.StudentID == studentID
+                              select _student;
+                return student.First();
+            }
+        }
+        
     }
 
 }

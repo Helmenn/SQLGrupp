@@ -36,7 +36,7 @@ namespace DataAccess
         {
             using (var schoolContext = new SchoolContext())
             {
-                var allaFrågorFörProv = from frågor in schoolContext.Frågor
+                var allaFrågorFörProv = from frågor in schoolContext.Fråga
                                         where frågor.Prov == prov
                                         select frågor;
                 foreach(var fråga in allaFrågorFörProv)
