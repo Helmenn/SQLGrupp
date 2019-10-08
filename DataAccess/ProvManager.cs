@@ -43,6 +43,15 @@ namespace DataAccess
                 {
                     Console.WriteLine(fråga.FrågText);
                 }
+
+
+                var provSvar = from _provSvar in schoolContext.Provsvar
+                               where _provSvar.ProvID == prov.ProvID && _provSvar.studentID == student.StudentID
+                               select _provSvar;
+
+                var allaSvarFrånStudent = from svar in schoolContext.Svar
+                                          where svar.Provsvar == provSvar.First()
+                                          select svar;
             }
         }
 
