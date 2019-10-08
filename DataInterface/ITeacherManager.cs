@@ -9,5 +9,6 @@ namespace DataInterface
     {
         public void AddTeacher(string teacherName);
         public Teacher GetTeacherByID(int TeacherID);
+        public Teacher GetTeacherByName(string name);
     }
 }

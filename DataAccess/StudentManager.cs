@@ -5,7 +5,6 @@ using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Collections.Generic;
 
-
 namespace DataAccess
 {
     public class StudentManager : IStudentManager
@@ -14,7 +13,6 @@ namespace DataAccess
         {
             using (var schoolContext = new SchoolContext())
             {
-
                 var Student = new Student();
                 Student.StudentName = Name;
                 Student.StudentAge = StudentAge;
@@ -32,7 +30,5 @@ namespace DataAccess
                 return student.First();
             }
         }
-        
     }
-
 }

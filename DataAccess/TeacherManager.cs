@@ -29,6 +29,18 @@ namespace DataAccess
                 return Teacher.First();
             }
         }
+
+        public Teacher GetTeacherByName(string name)
+        {
+            using (var schoolContext = new SchoolContext())
+            {
+                var Teacher = from _Teacher in schoolContext.Teachers
+                              where _Teacher.TeacherName == name
+                              select _Teacher;
+                return Teacher.First();
+            }
+
+        }
     }
 
 }
