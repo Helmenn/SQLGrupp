@@ -11,6 +11,9 @@ namespace SQL
     {
         static void Inmatning()
         {
+            var studentManager = new StudentManager();
+            studentManager.AddStudent("Tobias", 50);
+
             using (var schoolContext = new SchoolContext())
             {
 
@@ -80,9 +83,10 @@ namespace SQL
             }
 
             ITeacherManager teacherManager = new TeacherManager();
-
-            teacherManager.AddTeacher("A");
-
+            teacherManager.AddTeacher("Sten");
+            teacherManager.AddTeacher("Anna");
+            teacherManager.AddTeacher("Siv");
+            teacherManager.AddTeacher("Albert");
         }
         static void Main(string[] args)
         {

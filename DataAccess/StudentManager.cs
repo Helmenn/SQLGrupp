@@ -37,8 +37,6 @@ namespace DataAccess
                 Student.StudentName = "Sara";
                 Student.StudentAge = 20;
                 schoolContext.Students.Add(Student);
-
-
             }
         }
     }
