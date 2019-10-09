@@ -10,5 +10,6 @@ namespace DataInterface
         public void AddStudent(string StudentName, int StudentAge);
 
         public Student GetStudentByID(int studentID);
+        public Student GetStudentByName(string name);
     }
 }
