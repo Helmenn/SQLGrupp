@@ -9,35 +9,40 @@ namespace DataAccess
 {
     public class CourseManager : ICourseManager
     {
-        public void AddCourse(string name, int roomid, string teacherName)
+        public void AddCourse(string name, int roomId, string teacherName)
         {
             using (var schoolContext = new SchoolContext())
             {
                 // Kolla om det redan finns en lärare som heter teacherName
 
+                var teacherManager = new TeacherManager();
+                var newTeacher = teacherManager.GetTeacherByName(teacherName);
 
-                // Skapa läraren om den inte finns
+                if (newTeacher is null)
+                {
+                    // Skapa läraren om den inte finns
+                    teacherManager.AddTeacher(teacherName);
+                    // Hämta nytt lärarobjekt
+                    newTeacher = teacherManager.GetTeacherByName(teacherName);
+                }
 
-                // Hämta nytt lärarobjekt
-
-
-                // Kolla om det redan finns en kurs med namnet name
-
-                // Skapa kursen om den inte finns
-
-                // Hämta kursobjektet
-                
                 // Lägg till kurs och lärare
-
-
-
-
+                var course = new Courses();
+                course.CourseName = name;
+                course.CourseRoom = roomId;
+                course.Teacher = newTeacher;
+                schoolContext.Courses.Add(course);
             }
         }
-
         public Courses GetCourseByName(string name)
         {
-            throw new NotImplementedException();
+            using (var schoolContext = new SchoolContext())
+            {
+                var course = from _course in schoolContext.Courses
+                              where _course.CourseName == name
+                              select _course;
+                return course.First();
+            }
         }
     }
 }
