@@ -17,6 +17,7 @@ namespace DataAccess
                 Student.StudentName = Name;
                 Student.StudentAge = StudentAge;
                 schoolContext.Students.Add(Student);
+                schoolContext.SaveChanges();
             }
         }
     
