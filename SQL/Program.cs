@@ -101,12 +101,55 @@ namespace SQL
             StudentManger.AddStudent("Samuel", 32);
             StudentManger.AddStudent("Sten", 20);
             StudentManger.AddStudent("Rasmus", 21);
-        
-            // Sedan blir det meckigt att få till kopplingen mellan student och kurs, tycker vi.
-            // Vi saknar den direkta kopplingen till student och kurs, så att vi enkelt kan lägga
-            // En elev på en kurs, tycker vi.
-            // Vi kan ju skapa en metod som hämtar studentID och kursID med hjälp av namnen på kurs
-            // respektive student, men det känns ju inte helt "rätt" väg att gå.
+
+            ICourseManager courseManager = new CourseManager();
+            courseManager.AddCourse("Matte", 102, 1);
+            courseManager.AddCourse("Fysik", 102, 1);
+            courseManager.AddCourse("Svenska", 103, 2);
+            courseManager.AddCourse("Engelska", 103, 2);
+            courseManager.AddCourse("Historia", 104, 3);
+            courseManager.AddCourse("Spanska", 105, 4);
+
+            IFrågaManager frågaManager = new FrågaManager();
+            frågaManager.AddFråga("Fråga A", 1);
+            frågaManager.AddFråga("Fråga B", 1);
+            frågaManager.AddFråga("Fråga C", 1);
+            frågaManager.AddFråga("Fråga A", 2);
+            frågaManager.AddFråga("Fråga B", 2);
+            frågaManager.AddFråga("Fråga C", 2);
+            frågaManager.AddFråga("Fråga A", 3);
+            frågaManager.AddFråga("Fråga B", 3);
+            frågaManager.AddFråga("Fråga C", 3);
+            frågaManager.AddFråga("Fråga A", 4);
+            frågaManager.AddFråga("Fråga B", 4);
+            frågaManager.AddFråga("Fråga C", 4);
+            frågaManager.AddFråga("Fråga A", 5);
+            frågaManager.AddFråga("Fråga B", 5);
+            frågaManager.AddFråga("Fråga C", 5);
+            frågaManager.AddFråga("Fråga A", 6);
+            frågaManager.AddFråga("Fråga B", 6);
+            frågaManager.AddFråga("Fråga C", 6);
+
+            ISvarAltManger svarAltManger = new SvarAltManager();
+            svarAltManger.AddSvarAlt("Svar 1", false, 1);
+            svarAltManger.AddSvarAlt("Svar 2", false, 1);
+            svarAltManger.AddSvarAlt("Svar 3", true, 1);
+            svarAltManger.AddSvarAlt("Svar 1", false, 2);
+            svarAltManger.AddSvarAlt("Svar 2", false, 2);
+            svarAltManger.AddSvarAlt("Svar 3", true, 2);
+            svarAltManger.AddSvarAlt("Svar 1", true, 3);
+            svarAltManger.AddSvarAlt("Svar 2", false, 3);
+            svarAltManger.AddSvarAlt("Svar 3", false, 3);
+            svarAltManger.AddSvarAlt("Svar 1", false, 4);
+            svarAltManger.AddSvarAlt("Svar 2", true, 4);
+            svarAltManger.AddSvarAlt("Svar 3", false, 4);
+            svarAltManger.AddSvarAlt("Svar 1", false, 5);
+            svarAltManger.AddSvarAlt("Svar 2", true, 5);
+            svarAltManger.AddSvarAlt("Svar 3", false, 5);
+            svarAltManger.AddSvarAlt("Svar 1", false, 6);
+            svarAltManger.AddSvarAlt("Svar 2", false, 6);
+            svarAltManger.AddSvarAlt("Svar 3", true, 6);
+
         }
         static void Main(string[] args)
         {
