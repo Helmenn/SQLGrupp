@@ -24,6 +24,7 @@ namespace DataAccess
                     Prov.Courses = course;
                     Prov.CourseId = course.CourseID;
                     schoolContext.Prov.Add(Prov);
+                    schoolContext.SaveChanges();
                 }
             }
         }

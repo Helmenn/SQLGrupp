@@ -11,10 +11,6 @@ namespace SQL
     {
         static void Inmatning()
         {
-            
-
-          
-
             ITeacherManager teacherManager = new TeacherManager();
             teacherManager.AddTeacher("Sten");
             teacherManager.AddTeacher("Anna");

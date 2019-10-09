@@ -41,5 +41,26 @@ namespace DataAccess
             }
 
         }
+
+
+        public void AddCourseToStudent(string studentName, string courseName)
+        {
+            using (var schoolContext = new SchoolContext())
+            {
+                IStudentManager studentManager = new StudentManager();
+                ICourseManager courseManager = new CourseManager();
+                var student = studentManager.GetStudentByName(studentName);
+                var course = courseManager.GetCourseByName(courseName);
+                if (student != null && course != null) {
+                    StudentCourse studentCourse = new StudentCourse();
+                    studentCourse.StudentID = student.StudentID;
+                    studentCourse.CourseID = course.CourseID;
+                    schoolContext.StudentCourses.Add(studentCourse);
+                    schoolContext.SaveChanges();
+                }
+            }
+            
+
+        }
     }
 }
