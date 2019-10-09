@@ -16,6 +16,7 @@ namespace DataAccess
                 grade.CourseID = courseid;
                 grade.StudentID = studentid;
                 schoolContext.Grades.Add(grade);
+                schoolContext.SaveChanges();
             }
         }
     }
