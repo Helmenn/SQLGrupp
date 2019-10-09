@@ -59,8 +59,25 @@ namespace DataAccess
                     schoolContext.SaveChanges();
                 }
             }
-            
+        }
+
+        public Courses[] GetCourses (string studentName)
+        {
+            using (var schoolContext = new SchoolContext()) 
+            {
+                IStudentManager studentManager = new StudentManager();
+                var student = studentManager.GetStudentByName(studentName);
+
+                var courses = from _courses in schoolContext.Courses
+                              join _studentCourse in schoolContext.StudentCourses
+                              on _courses.CourseID equals _studentCourse.CourseID
+                              where _studentCourse.CourseID == _courses.CourseID
+                              select _courses;
+
+                return courses.ToArray();
+            }
 
         }
+
     }
 }

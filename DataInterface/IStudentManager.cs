@@ -1,6 +1,7 @@
 ﻿using SQL;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace DataInterface
@@ -11,6 +12,8 @@ namespace DataInterface
 
         public Student GetStudentByID(int studentID);
         public void AddStudentToCourse(string studentName, string courseName);
+        public Courses[] GetCourses(string studentName);
+
         public Student GetStudentByName(string name);
     }
 }
