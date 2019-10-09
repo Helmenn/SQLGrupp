@@ -11,26 +11,25 @@ namespace DataAccess
     {
         public void AddCourse(string name, int roomId, string teacherName)
         {
+            // Kolla om det redan finns en lärare som heter teacherName
+
+            var teacherManager = new TeacherManager();
+            var newTeacher = teacherManager.GetTeacherByName(teacherName);
+
+            if (newTeacher is null)
+            {
+                // Skapa läraren om den inte finns
+                teacherManager.AddTeacher(teacherName);
+                // Hämta nytt lärarobjekt
+                newTeacher = teacherManager.GetTeacherByName(teacherName);
+            }
             using (var schoolContext = new SchoolContext())
             {
-                // Kolla om det redan finns en lärare som heter teacherName
-
-                var teacherManager = new TeacherManager();
-                var newTeacher = teacherManager.GetTeacherByName(teacherName);
-
-                if (newTeacher is null)
-                {
-                    // Skapa läraren om den inte finns
-                    teacherManager.AddTeacher(teacherName);
-                    // Hämta nytt lärarobjekt
-                    newTeacher = teacherManager.GetTeacherByName(teacherName);
-                }
-
                 // Lägg till kurs och lärare
                 var course = new Courses();
                 course.CourseName = name;
                 course.CourseRoom = roomId;
-                course.Teacher = newTeacher;
+                course.TeacherID = newTeacher.TeacherID;
                 schoolContext.Courses.Add(course);
                 schoolContext.SaveChanges();
             }
