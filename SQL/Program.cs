@@ -18,6 +18,14 @@ namespace SQL
             teacherManager.AddTeacher("Albert");
 
 
+            ICourseManager courseManager = new CourseManager();
+            courseManager.AddCourse("Matte", 102, "Sten");
+            courseManager.AddCourse("Fysik", 102, "Sten");
+            courseManager.AddCourse("Svenska", 103, "Anna");
+            courseManager.AddCourse("Engelska", 103, "Anna");
+            courseManager.AddCourse("Historia", 104, "Siv");
+            courseManager.AddCourse("Spanska", 105, "Albert");
+
             IStudentManager StudentManger = new StudentManager();
             StudentManger.AddStudent("Adam", 19);
             StudentManger.AddStudentToCourse("Adam","Matte");
@@ -42,13 +50,6 @@ namespace SQL
             StudentManger.AddStudent("Rasmus", 21);
             StudentManger.AddStudentToCourse("Rasmus", "Engelska");
 
-            ICourseManager courseManager = new CourseManager();
-            courseManager.AddCourse("Matte", 102, "Sten");
-            courseManager.AddCourse("Fysik", 102, "Sten");
-            courseManager.AddCourse("Svenska", 103, "Anna");
-            courseManager.AddCourse("Engelska", 103, "Anna");
-            courseManager.AddCourse("Historia", 104, "Siv");
-            courseManager.AddCourse("Spanska", 105, "Albert");
 
 
             IProvManager provManager = new ProvManager();
