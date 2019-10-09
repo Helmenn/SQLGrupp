@@ -96,7 +96,13 @@ namespace SQL
         }
         static void Main(string[] args)
         {
-      
+            bool mataIn = false;
+            if (Console.ReadLine() == ("Mata in").ToLower())
+                mataIn = true;
+
+            if (mataIn)
+                Inmatning();
+
         }
     }
 }
