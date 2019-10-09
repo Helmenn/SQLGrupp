@@ -17,11 +17,14 @@ namespace DataAccess
                 ICourseManager courseManager = new CourseManager();
                 var course = courseManager.GetCourseByName(CourseName);
 
-                var Prov = new Prov();
-                Prov.Andel = Andel;
-                Prov.Courses = course;
-                Prov.CourseId = course.CourseID;
-                schoolContext.Prov.Add(Prov);
+                if (course != null)
+                {
+                    var Prov = new Prov();
+                    Prov.Andel = Andel;
+                    Prov.Courses = course;
+                    Prov.CourseId = course.CourseID;
+                    schoolContext.Prov.Add(Prov);
+                }
             }
         }
 
