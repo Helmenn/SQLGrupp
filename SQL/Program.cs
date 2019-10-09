@@ -110,28 +110,7 @@ namespace SQL
         }
         static void Main(string[] args)
         {
-            IStudentManager studentManager = new StudentManager();
-            IProvManager provManager = new ProvManager();
-
-            Prov testProv = provManager.GetProv(2);
-            Student testStudent = studentManager.GetStudentByID(1);
-
-            provManager.RättaProv(2, 1);
-
-            /*
-            using(var schoolContext = new SchoolContext())
-            {
-
-                var allaKurserFörStudent = (from Students in schoolContext.Students
-                                            join StudentCourse in schoolContext.StudentCourses on Students.StudentID equals StudentCourse.StudentID
-                                            join Courses in schoolContext.Courses on StudentCourse.CourseID equals Courses.CourseID
-                                            where StudentCourse.StudentID == int.Parse(Console.ReadLine())
-                                            select Courses);
-
-                foreach (var kurs in allaKurserFörStudent)
-                    Console.WriteLine(kurs.CourseName);
-                    
-            }*/
+      
         }
     }
 }
