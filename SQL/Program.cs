@@ -36,21 +36,21 @@ namespace SQL
             StudentManger.AddStudent("Rasmus", 21);
 
             ICourseManager courseManager = new CourseManager();
-            courseManager.AddCourse("Matte", 102, 1);
-            courseManager.AddCourse("Fysik", 102, 1);
-            courseManager.AddCourse("Svenska", 103, 2);
-            courseManager.AddCourse("Engelska", 103, 2);
-            courseManager.AddCourse("Historia", 104, 3);
-            courseManager.AddCourse("Spanska", 105, 4);
+            courseManager.AddCourse("Matte", 102, "Sten");
+            courseManager.AddCourse("Fysik", 102, "Sten");
+            courseManager.AddCourse("Svenska", 103, "Anna");
+            courseManager.AddCourse("Engelska", 103, "Anna");
+            courseManager.AddCourse("Historia", 104, "Siv");
+            courseManager.AddCourse("Spanska", 105, "Albert");
 
 
             IProvManager provManager = new ProvManager();
-            provManager.AddProv(50, 1);
-            provManager.AddProv(60, 2);
-            provManager.AddProv(40, 3);
-            provManager.AddProv(70, 4);
-            provManager.AddProv(60, 5);
-            provManager.AddProv(50, 6);
+            provManager.AddProv(50, "Matte");
+            provManager.AddProv(60, "Fysik");
+            provManager.AddProv(40, "Svenska");
+            provManager.AddProv(70, "Engelska");
+            provManager.AddProv(60, "Historia");
+            provManager.AddProv(50, "Spanska");
 
 
 
@@ -94,6 +94,8 @@ namespace SQL
             svarAltManger.AddSvarAlt("Svar 2", false, 6);
             svarAltManger.AddSvarAlt("Svar 3", true, 6);
 
+
+            
         }
         static void Main(string[] args)
         {
