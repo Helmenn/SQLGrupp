@@ -21,15 +21,25 @@ namespace SQL
             IStudentManager StudentManger = new StudentManager();
             StudentManger.AddStudent("Adam", 19);
             StudentManger.AddStudent("Amanda", 23);
+            StudentManger.AddStudentToCourse("Amanda", "Matte");
             StudentManger.AddStudent("Andreas", 37);
+            StudentManger.AddStudentToCourse("Andreas", "Matte");
             StudentManger.AddStudent("Anna", 27);
+            StudentManger.AddStudentToCourse("Anna", "Fysik");
             StudentManger.AddStudent("Alan", 30);
+            StudentManger.AddStudentToCourse("Alan", "Svenska");
             StudentManger.AddStudent("Anika", 23);
+            StudentManger.AddStudentToCourse("Anika", "Engelska");
             StudentManger.AddStudent("Håkan", 19);
+            StudentManger.AddStudentToCourse("Håkan", "Historia");
             StudentManger.AddStudent("Simon", 23);
+            StudentManger.AddStudentToCourse("Simon", "Spanska");
             StudentManger.AddStudent("Samuel", 32);
+            StudentManger.AddStudentToCourse("Samuel", "Spanska");
             StudentManger.AddStudent("Sten", 20);
+            StudentManger.AddStudentToCourse("Sten", "Matte");
             StudentManger.AddStudent("Rasmus", 21);
+            StudentManger.AddStudentToCourse("Rasmus", "Engelska");
 
             ICourseManager courseManager = new CourseManager();
             courseManager.AddCourse("Matte", 102, "Sten");
