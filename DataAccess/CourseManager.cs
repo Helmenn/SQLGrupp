@@ -44,5 +44,9 @@ namespace DataAccess
                 return course.First();
             }
         }
+        public void AddStudentToCourse(string studentName, string courseName)
+        {
+            new StudentManager().AddStudentToCourse(studentName,courseName);
+        }
     }
 }

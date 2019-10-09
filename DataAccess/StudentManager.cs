@@ -43,7 +43,7 @@ namespace DataAccess
         }
 
 
-        public void AddCourseToStudent(string studentName, string courseName)
+        public void AddStudentToCourse(string studentName, string courseName)
         {
             using (var schoolContext = new SchoolContext())
             {
