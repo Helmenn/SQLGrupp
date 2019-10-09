@@ -34,28 +34,19 @@ namespace DataAccess
 
         public void RättaProv(int provid, int studentid)
         {
+            
+        }
+
+        public IQueryable<Fråga> GetFrågorByProvID(int provid)
+        {
             using (var schoolContext = new SchoolContext())
             {
                 var allaFrågorFörProv = from frågor in schoolContext.Fråga
                                         where frågor.ProvID == provid
                                         select frågor;
-                foreach(var fråga in allaFrågorFörProv)
-                {
-                    Console.WriteLine(fråga.FrågText);
-                }
-
-
-                var provSvar = from _provSvar in schoolContext.Provsvar
-                               where _provSvar.ProvID == provid && _provSvar.studentID == studentid
-                               select _provSvar;
-
-                var allaSvarFrånStudent = from svar in schoolContext.Svar
-                                          where svar.Provsvar == provSvar.First()
-                                          select svar;
+                return allaFrågorFörProv;
             }
         }
-
-
 
     }
 }
