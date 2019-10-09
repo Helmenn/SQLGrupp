@@ -20,6 +20,7 @@ namespace SQL
 
             IStudentManager StudentManger = new StudentManager();
             StudentManger.AddStudent("Adam", 19);
+            StudentManger.AddStudentToCourse("Adam","Matte");
             StudentManger.AddStudent("Amanda", 23);
             StudentManger.AddStudentToCourse("Amanda", "Matte");
             StudentManger.AddStudent("Andreas", 37);
