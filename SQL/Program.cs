@@ -49,8 +49,7 @@ namespace SQL
             courseManager.AddCourse("Engelska", 103, "Anna");
             courseManager.AddCourse("Historia", 104, "Siv");
             courseManager.AddCourse("Spanska", 105, "Albert");
-
-
+            
             IProvManager provManager = new ProvManager();
             IFrågaManager frågaManager = new FrågaManager();
             ISvarAltManger svarAltManger = new SvarAltManager();

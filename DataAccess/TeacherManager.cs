@@ -18,7 +18,6 @@ namespace DataAccess
                 schoolContext.Teachers.Add(teacher);
                 schoolContext.SaveChanges();
             }
-
         }
         public Teacher GetTeacherByID(int TeacherID)
         {
@@ -30,7 +29,6 @@ namespace DataAccess
                 return Teacher.First();
             }
         }
-
         public Teacher GetTeacherByName(string name)
         {
             using (var schoolContext = new SchoolContext())
@@ -40,8 +38,6 @@ namespace DataAccess
                               select _Teacher;
                 return Teacher.First();
             }
-
         }
     }
-
 }

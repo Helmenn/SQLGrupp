@@ -40,7 +40,7 @@ namespace DataAccess
             using (var schoolContext = new SchoolContext())
             {
                 var course = from _course in schoolContext.Courses
-                              where _course.CourseName == name
+                              where string.Compare(_course.CourseName , name, StringComparison.InvariantCulture) ==0
                               select _course;
                 return course.First();
             }
