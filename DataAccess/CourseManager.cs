@@ -34,10 +34,15 @@ namespace DataAccess
                 schoolContext.Courses.Add(course);
             }
         }
-
         public Courses GetCourseByName(string name)
         {
-            throw new NotImplementedException();
+            using (var schoolContext = new SchoolContext())
+            {
+                var course = from _course in schoolContext.Courses
+                              where _course.CourseName == name
+                              select _course;
+                return course.First();
+            }
         }
     }
 }
