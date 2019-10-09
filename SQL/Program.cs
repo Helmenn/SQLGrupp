@@ -29,7 +29,7 @@ namespace SQL
             StudentManger.AddStudentToCourse("Anna", "Fysik");
             StudentManger.AddStudent("Alan", 30);
             StudentManger.AddStudentToCourse("Alan", "Svenska");
-            StudentManger.AddStudent("Anika", 23);
+            StudentManger.AddStudent("Anika", 23); 
             StudentManger.AddStudentToCourse("Anika", "Engelska");
             StudentManger.AddStudent("Håkan", 19);
             StudentManger.AddStudentToCourse("Håkan", "Historia");
