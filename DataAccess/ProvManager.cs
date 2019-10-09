@@ -10,7 +10,7 @@ namespace DataAccess
     public class ProvManager : IProvManager
 
     {
-        public void AddProv(int Andel, string CourseName)
+        public Prov AddProv(int Andel, string CourseName)
         {
             using (var schoolContext = new SchoolContext())
             {
@@ -19,13 +19,15 @@ namespace DataAccess
 
                 if (course != null)
                 {
-                    var Prov = new Prov();
-                    Prov.Andel = Andel;
-                    Prov.Courses = course;
-                    Prov.CourseId = course.CourseID;
-                    schoolContext.Prov.Add(Prov);
+                    var prov = new Prov();
+                    prov.Andel = Andel;
+                    prov.Courses = course;
+                    prov.CourseId = course.CourseID;
+                    schoolContext.Prov.Add(prov);
                     schoolContext.SaveChanges();
+                    return prov;
                 }
+                return null;
             }
         }
 

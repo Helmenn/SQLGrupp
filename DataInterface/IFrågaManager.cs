@@ -8,7 +8,7 @@ namespace DataInterface
 {
     public interface IFrågaManager
     {
-        public void AddFråga(string text, int provID);
+        public Fråga AddFråga(string text, int provID);
         public IQueryable<Fråga> GetFrågorByProvID(int provid);
     }
 }

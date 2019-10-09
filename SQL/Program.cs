@@ -52,19 +52,33 @@ namespace SQL
 
 
             IProvManager provManager = new ProvManager();
-            provManager.AddProv(50, "Matte");
-            provManager.AddProv(60, "Fysik");
-            provManager.AddProv(40, "Svenska");
-            provManager.AddProv(70, "Engelska");
-            provManager.AddProv(60, "Historia");
-            provManager.AddProv(50, "Spanska");
-
-
-
             IFrågaManager frågaManager = new FrågaManager();
-            frågaManager.AddFråga("Fråga A", 1);
-            frågaManager.AddFråga("Fråga B", 1);
-            frågaManager.AddFråga("Fråga C", 1);
+            ISvarAltManger svarAltManger = new SvarAltManager();
+            var prov1 = provManager.AddProv(50, "Matte");
+            var fråga1 = frågaManager.AddFråga("Fråga A", prov1.ProvID);
+            svarAltManger.AddSvarAlt("Svar 1", false, fråga1.FrågaID);
+            svarAltManger.AddSvarAlt("Svar 2", false, fråga1.FrågaID);
+            svarAltManger.AddSvarAlt("Svar 3", true, fråga1.FrågaID);
+
+            var fråga2 = frågaManager.AddFråga("Fråga B", prov1.ProvID);
+            svarAltManger.AddSvarAlt("Svar 1", false, fråga2.FrågaID);
+            svarAltManger.AddSvarAlt("Svar 2", false, fråga2.FrågaID);
+            svarAltManger.AddSvarAlt("Svar 3", true, fråga2.FrågaID);
+            
+            var fråga3 = frågaManager.AddFråga("Fråga C", prov1.ProvID);
+            svarAltManger.AddSvarAlt("Svar 1", true, fråga3.FrågaID);
+            svarAltManger.AddSvarAlt("Svar 2", false, fråga3.FrågaID);
+            svarAltManger.AddSvarAlt("Svar 3", false, fråga3.FrågaID);
+            
+
+            var prov2 = provManager.AddProv(60, "Fysik");
+            var prov3 = provManager.AddProv(40, "Svenska");
+            var prov4 = provManager.AddProv(70, "Engelska");
+            var prov5 = provManager.AddProv(60, "Historia");
+            var prov6 = provManager.AddProv(50, "Spanska");
+
+
+
             frågaManager.AddFråga("Fråga A", 2);
             frågaManager.AddFråga("Fråga B", 2);
             frågaManager.AddFråga("Fråga C", 2);
@@ -81,16 +95,6 @@ namespace SQL
             frågaManager.AddFråga("Fråga B", 6);
             frågaManager.AddFråga("Fråga C", 6);
 
-            ISvarAltManger svarAltManger = new SvarAltManager();
-            svarAltManger.AddSvarAlt("Svar 1", false, 1);
-            svarAltManger.AddSvarAlt("Svar 2", false, 1);
-            svarAltManger.AddSvarAlt("Svar 3", true, 1);
-            svarAltManger.AddSvarAlt("Svar 1", false, 2);
-            svarAltManger.AddSvarAlt("Svar 2", false, 2);
-            svarAltManger.AddSvarAlt("Svar 3", true, 2);
-            svarAltManger.AddSvarAlt("Svar 1", true, 3);
-            svarAltManger.AddSvarAlt("Svar 2", false, 3);
-            svarAltManger.AddSvarAlt("Svar 3", false, 3);
             svarAltManger.AddSvarAlt("Svar 1", false, 4);
             svarAltManger.AddSvarAlt("Svar 2", true, 4);
             svarAltManger.AddSvarAlt("Svar 3", false, 4);

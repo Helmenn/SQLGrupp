@@ -9,7 +9,7 @@ namespace DataAccess
 {
     public class FrågaManager : IFrågaManager
     {
-        public void AddFråga(string text, int provID)
+        public Fråga AddFråga(string text, int provID)
         {
             using (var schoolContext = new SchoolContext())
             {
@@ -18,6 +18,7 @@ namespace DataAccess
                 fråga.ProvID = provID;
                 schoolContext.Fråga.Add(fråga);
                 schoolContext.SaveChanges();
+                return fråga;
             }
         }
         public IQueryable<Fråga> GetFrågorByProvID(int provid)
