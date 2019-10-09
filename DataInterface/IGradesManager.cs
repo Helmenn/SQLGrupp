@@ -7,6 +7,6 @@ namespace DataInterface
 {
     public interface IGradesManager
     {
-        public void AddGrade(string gradeName, Courses course, Student student);
+        public void AddGrade(string gradeName, int courseid, int studentid);
     }
 }

@@ -8,7 +8,7 @@ namespace DataInterface
     public interface IProvManager
     {
         public void AddProv(int Andel, int CourseID);
-        public void RättaProv(Prov prov, Student student);
+        public void RättaProv(int provid, int studentid);
         public Prov GetProv(int id);
     }
 }

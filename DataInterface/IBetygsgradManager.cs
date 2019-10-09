@@ -4,6 +4,6 @@ namespace DataInterface
 {
     public interface IBetygsgradManager
     {
-        public void AddBetygsgrad(Courses course, int poäng, string betyg);
+        public void AddBetygsgrad(int courseid, int poäng, string betyg);
     }
 }

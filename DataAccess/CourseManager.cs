@@ -8,14 +8,14 @@ namespace DataAccess
 {
     public class CourseManager : ICourseManager
     {
-        public void AddCourse(string name, int roomid, Teacher teacher)
+        public void AddCourse(string name, int roomid, int teacherid)
         {
             using (var schoolContext = new SchoolContext())
             {
                 var courses = new Courses();
                 courses.CourseName = name;
                 courses.CourseRoom = roomid;
-                courses.TeacherID = teacher.TeacherID;
+                courses.TeacherID = teacherid;
                 schoolContext.Courses.Add(courses);
             }
         }

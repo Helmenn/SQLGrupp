@@ -116,7 +116,7 @@ namespace SQL
             Prov testProv = provManager.GetProv(2);
             Student testStudent = studentManager.GetStudentByID(1);
 
-            provManager.RättaProv(testProv, testStudent);
+            provManager.RättaProv(2, 1);
 
             /*
             using(var schoolContext = new SchoolContext())
