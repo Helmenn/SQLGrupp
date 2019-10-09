@@ -11,76 +11,9 @@ namespace SQL
     {
         static void Inmatning()
         {
-            var studentManager = new StudentManager();
-            studentManager.AddStudent("Tobias", 50);
+            
 
-            using (var schoolContext = new SchoolContext())
-            {
-
-                #region Studentnamn
-                var student = new Student();
-                student.StudentName = "Leif";
-                student.StudentAge = 19;
-                schoolContext.Students.Add(student);
-
-                student = new Student();
-                student.StudentName = "Christer";
-                student.StudentAge = 22;
-                schoolContext.Students.Add(student);
-
-                student = new Student();
-                student.StudentName = "Hasse";
-                student.StudentAge = 20;
-                schoolContext.Students.Add(student);
-
-                student = new Student();
-                student.StudentName = "Johan";
-                student.StudentAge = 28;
-                schoolContext.Students.Add(student);
-
-                student = new Student();
-                student.StudentName = "Janne";
-                student.StudentAge = 20;
-                schoolContext.Students.Add(student);
-
-                student = new Student();
-                student.StudentName = "Håkan";
-                student.StudentAge = 19;
-                schoolContext.Students.Add(student);
-
-                student = new Student();
-                student.StudentName = "Johnny";
-                student.StudentAge = 20;
-                schoolContext.Students.Add(student);
-
-                student = new Student();
-                student.StudentName = "Olof";
-                student.StudentAge = 28;
-                schoolContext.Students.Add(student);
-
-                student = new Student();
-                student.StudentName = "Anna";
-                student.StudentAge = 31;
-                schoolContext.Students.Add(student);
-
-                student = new Student();
-                student.StudentName = "Gunnar";
-                student.StudentAge = 40;
-                schoolContext.Students.Add(student);
-
-                student = new Student();
-                student.StudentName = "Eva";
-                student.StudentAge = 24;
-                schoolContext.Students.Add(student);
-
-                student = new Student();
-                student.StudentName = "Anders";
-                student.StudentAge = 19;
-                schoolContext.Students.Add(student);
-
-                #endregion
-
-            }
+          
 
             ITeacherManager teacherManager = new TeacherManager();
             teacherManager.AddTeacher("Sten");
@@ -109,6 +42,17 @@ namespace SQL
             courseManager.AddCourse("Engelska", 103, 2);
             courseManager.AddCourse("Historia", 104, 3);
             courseManager.AddCourse("Spanska", 105, 4);
+
+
+            IProvManager provManager = new ProvManager();
+            provManager.AddProv(50, 1);
+            provManager.AddProv(60, 2);
+            provManager.AddProv(40, 3);
+            provManager.AddProv(70, 4);
+            provManager.AddProv(60, 5);
+            provManager.AddProv(50, 6);
+
+
 
             IFrågaManager frågaManager = new FrågaManager();
             frågaManager.AddFråga("Fråga A", 1);
