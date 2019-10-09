@@ -10,13 +10,17 @@ namespace DataAccess
     public class ProvManager : IProvManager
 
     {
-        public void AddProv(int Andel, int CourseID)
+        public void AddProv(int Andel, string CourseName)
         {
             using (var schoolContext = new SchoolContext())
             {
+                ICourseManager courseManager = new CourseManager();
+                var course = courseManager.GetCourseByName(CourseName);
+
                 var Prov = new Prov();
                 Prov.Andel = Andel;
-                Prov.CourseId = CourseID;
+                Prov.Courses = course;
+                Prov.CourseId = course.CourseID;
                 schoolContext.Prov.Add(Prov);
             }
         }
