@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using DataInterface;
+using System.Linq;
 
 namespace DataAccess
 {
@@ -16,6 +17,16 @@ namespace DataAccess
                 fråga.FrågText = text;
                 fråga.ProvID = provID;
                 schoolContext.Fråga.Add(fråga);
+            }
+        }
+        public IQueryable<Fråga> GetFrågorByProvID(int provid)
+        {
+            using (var schoolContext = new SchoolContext())
+            {
+                var allaFrågorFörProv = from frågor in schoolContext.Fråga
+                                        where frågor.ProvID == provid
+                                        select frågor;
+                return allaFrågorFörProv;
             }
         }
     }
