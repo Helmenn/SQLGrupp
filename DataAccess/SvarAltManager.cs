@@ -18,6 +18,7 @@ namespace DataAccess
                 SvarAlt.Rätt = Rätt;
                 SvarAlt.FrågaID = FrågaID;
                 schoolContext.Svaralt.Add(SvarAlt);
+                schoolContext.SaveChanges();
             }
         }
 

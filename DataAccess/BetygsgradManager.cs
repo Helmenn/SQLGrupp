@@ -17,6 +17,7 @@ namespace DataAccess
                 betygsgrad.Poäng = poäng;
                 betygsgrad.Betyg = betyg;
                 schoolContext.Betygssgrad.Add(betygsgrad);
+                schoolContext.SaveChanges();
             }
         }
     }

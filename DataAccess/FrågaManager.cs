@@ -17,6 +17,7 @@ namespace DataAccess
                 fråga.FrågText = text;
                 fråga.ProvID = provID;
                 schoolContext.Fråga.Add(fråga);
+                schoolContext.SaveChanges();
             }
         }
         public IQueryable<Fråga> GetFrågorByProvID(int provid)

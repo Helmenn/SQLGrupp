@@ -32,6 +32,7 @@ namespace DataAccess
                 course.CourseRoom = roomId;
                 course.Teacher = newTeacher;
                 schoolContext.Courses.Add(course);
+                schoolContext.SaveChanges();
             }
         }
         public Courses GetCourseByName(string name)
