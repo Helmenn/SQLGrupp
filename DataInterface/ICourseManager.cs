@@ -8,6 +8,8 @@ namespace DataInterface
     public interface ICourseManager
     {
         public void AddCourse(string name, int roomid, string teacherName);
+
+        public Courses GetCourseByName(string name);
   
     }
 }
