@@ -17,7 +17,6 @@ namespace SQL
             teacherManager.AddTeacher("Siv");
             teacherManager.AddTeacher("Albert");
 
-
             ICourseManager courseManager = new CourseManager();
             courseManager.AddCourse("Matte", 102, "Sten");
             courseManager.AddCourse("Fysik", 102, "Sten");
