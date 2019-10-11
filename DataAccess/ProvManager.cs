@@ -41,8 +41,41 @@ namespace DataAccess
             }
         }
 
+        public Fråga AddFråga(string text, int provID)
+        {
+            using (var schoolContext = new SchoolContext())
+            {
+                var fråga = new Fråga();
+                fråga.FrågText = text;
+                fråga.ProvID = provID;
+                schoolContext.Fråga.Add(fråga);
+                schoolContext.SaveChanges();
+                return fråga;
+            }
+        }
+        public IQueryable<Fråga> GetFrågorByProvID(int provid)
+        {
+            using (var schoolContext = new SchoolContext())
+            {
+                var allaFrågorFörProv = from frågor in schoolContext.Fråga
+                                        where frågor.ProvID == provid
+                                        select frågor;
+                return allaFrågorFörProv;
+            }
+        }
 
-        
+        public void AddSvarAlt(string SvarAltText, bool Rätt, int FrågaID)
+        {
+            using (var schoolContext = new SchoolContext())
+            {
+                var SvarAlt = new Svaralt();
+                SvarAlt.SvaraltText = SvarAltText;
+                SvarAlt.Rätt = Rätt;
+                SvarAlt.FrågaID = FrågaID;
+                schoolContext.Svaralt.Add(SvarAlt);
+                schoolContext.SaveChanges();
+            }
+        }
         /// <summary>
         /// Hämtar ett provobjekt baserat på dess ID.
         /// </summary>
@@ -65,8 +98,5 @@ namespace DataAccess
         {
             
         }
-
-        
-
     }
 }

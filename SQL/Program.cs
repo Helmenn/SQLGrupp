@@ -50,119 +50,102 @@ namespace SQL
             StudentManger.AddStudent("Rasmus", 21);
             StudentManger.AddStudentToCourse("Rasmus", "Engelska");
 
-
-
             IProvManager provManager = new ProvManager();
-            IFrågaManager frågaManager = new FrågaManager();
-            ISvarAltManger svarAltManger = new SvarAltManager();
             var prov1 = provManager.AddProv(50, "Matte");
-            var fråga1 = frågaManager.AddFråga("Fråga A", prov1.ProvID);
-            svarAltManger.AddSvarAlt("Svar 1", false, fråga1.FrågaID);
-            svarAltManger.AddSvarAlt("Svar 2", false, fråga1.FrågaID);
-            svarAltManger.AddSvarAlt("Svar 3", true, fråga1.FrågaID);
+            var fråga1 = provManager.AddFråga("Fråga A", prov1.ProvID);
+            provManager.AddSvarAlt("Svar 1", false, fråga1.FrågaID);
+            provManager.AddSvarAlt("Svar 2", false, fråga1.FrågaID);
+            provManager.AddSvarAlt("Svar 3", true, fråga1.FrågaID);
 
-            var fråga2 = frågaManager.AddFråga("Fråga B", prov1.ProvID);
-            svarAltManger.AddSvarAlt("Svar 1", false, fråga2.FrågaID);
-            svarAltManger.AddSvarAlt("Svar 2", false, fråga2.FrågaID);
-            svarAltManger.AddSvarAlt("Svar 3", true, fråga2.FrågaID);
+            var fråga2 = provManager.AddFråga("Fråga B", prov1.ProvID);
+            provManager.AddSvarAlt("Svar 1", false, fråga2.FrågaID);
+            provManager.AddSvarAlt("Svar 2", false, fråga2.FrågaID);
+            provManager.AddSvarAlt("Svar 3", true, fråga2.FrågaID);
             
-            var fråga3 = frågaManager.AddFråga("Fråga C", prov1.ProvID);
-            svarAltManger.AddSvarAlt("Svar 1", true, fråga3.FrågaID);
-            svarAltManger.AddSvarAlt("Svar 2", false, fråga3.FrågaID);
-            svarAltManger.AddSvarAlt("Svar 3", false, fråga3.FrågaID);
-            
+            var fråga3 = provManager.AddFråga("Fråga C", prov1.ProvID);
+            provManager.AddSvarAlt("Svar 1", true, fråga3.FrågaID);
+            provManager.AddSvarAlt("Svar 2", false, fråga3.FrågaID);
+            provManager.AddSvarAlt("Svar 3", false, fråga3.FrågaID);
 
             var prov2 = provManager.AddProv(60, "Fysik");
-            fråga1 = frågaManager.AddFråga("Fråga A", prov2.ProvID);
-            svarAltManger.AddSvarAlt("Svar 1", false, fråga1.FrågaID);
-            svarAltManger.AddSvarAlt("Svar 2", false, fråga1.FrågaID);
-            svarAltManger.AddSvarAlt("Svar 3", true, fråga1.FrågaID);
+            fråga1 = provManager.AddFråga("Fråga A", prov2.ProvID);
+            provManager.AddSvarAlt("Svar 1", false, fråga1.FrågaID);
+            provManager.AddSvarAlt("Svar 2", false, fråga1.FrågaID);
+            provManager.AddSvarAlt("Svar 3", true, fråga1.FrågaID);
 
+            fråga2 = provManager.AddFråga("Fråga B", prov2.ProvID);
+            provManager.AddSvarAlt("Svar 1", false, fråga2.FrågaID);
+            provManager.AddSvarAlt("Svar 2", false, fråga2.FrågaID);
+            provManager.AddSvarAlt("Svar 3", true, fråga2.FrågaID);
 
-            fråga2 = frågaManager.AddFråga("Fråga B", prov2.ProvID);
-            svarAltManger.AddSvarAlt("Svar 1", false, fråga2.FrågaID);
-            svarAltManger.AddSvarAlt("Svar 2", false, fråga2.FrågaID);
-            svarAltManger.AddSvarAlt("Svar 3", true, fråga2.FrågaID);
-
-            fråga3 = frågaManager.AddFråga("Fråga C", prov2.ProvID);
-            svarAltManger.AddSvarAlt("Svar 1", true, fråga3.FrågaID);
-            svarAltManger.AddSvarAlt("Svar 2", false, fråga3.FrågaID);
-            svarAltManger.AddSvarAlt("Svar 3", false, fråga3.FrågaID);
+            fråga3 = provManager.AddFråga("Fråga C", prov2.ProvID);
+            provManager.AddSvarAlt("Svar 1", true, fråga3.FrågaID);
+            provManager.AddSvarAlt("Svar 2", false, fråga3.FrågaID);
+            provManager.AddSvarAlt("Svar 3", false, fråga3.FrågaID);
 
             var prov3 = provManager.AddProv(40, "Svenska");
-            fråga1 = frågaManager.AddFråga("Fråga A", prov3.ProvID);
-            svarAltManger.AddSvarAlt("Svar 1", false, fråga1.FrågaID);
-            svarAltManger.AddSvarAlt("Svar 2", false, fråga1.FrågaID);
-            svarAltManger.AddSvarAlt("Svar 3", true, fråga1.FrågaID);
+            fråga1 = provManager.AddFråga("Fråga A", prov3.ProvID);
+            provManager.AddSvarAlt("Svar 1", false, fråga1.FrågaID);
+            provManager.AddSvarAlt("Svar 2", false, fråga1.FrågaID);
+            provManager.AddSvarAlt("Svar 3", true, fråga1.FrågaID);
 
+            fråga2 = provManager.AddFråga("Fråga B", prov3.ProvID);
+            provManager.AddSvarAlt("Svar 1", false, fråga2.FrågaID);
+            provManager.AddSvarAlt("Svar 2", false, fråga2.FrågaID);
+            provManager.AddSvarAlt("Svar 3", true, fråga2.FrågaID);
 
-            fråga2 = frågaManager.AddFråga("Fråga B", prov3.ProvID);
-            svarAltManger.AddSvarAlt("Svar 1", false, fråga2.FrågaID);
-            svarAltManger.AddSvarAlt("Svar 2", false, fråga2.FrågaID);
-            svarAltManger.AddSvarAlt("Svar 3", true, fråga2.FrågaID);
-
-            fråga3 = frågaManager.AddFråga("Fråga C", prov3.ProvID);
-            svarAltManger.AddSvarAlt("Svar 1", true, fråga3.FrågaID);
-            svarAltManger.AddSvarAlt("Svar 2", false, fråga3.FrågaID);
-            svarAltManger.AddSvarAlt("Svar 3", false, fråga3.FrågaID);
+            fråga3 = provManager.AddFråga("Fråga C", prov3.ProvID);
+            provManager.AddSvarAlt("Svar 1", true, fråga3.FrågaID);
+            provManager.AddSvarAlt("Svar 2", false, fråga3.FrågaID);
+            provManager.AddSvarAlt("Svar 3", false, fråga3.FrågaID);
 
             var prov4 = provManager.AddProv(70, "Engelska");
-            fråga1 = frågaManager.AddFråga("Fråga A", prov4.ProvID);
-            svarAltManger.AddSvarAlt("Svar 1", false, fråga1.FrågaID);
-            svarAltManger.AddSvarAlt("Svar 2", false, fråga1.FrågaID);
-            svarAltManger.AddSvarAlt("Svar 3", true, fråga1.FrågaID);
+            fråga1 = provManager.AddFråga("Fråga A", prov4.ProvID);
+            provManager.AddSvarAlt("Svar 1", false, fråga1.FrågaID);
+            provManager.AddSvarAlt("Svar 2", false, fråga1.FrågaID);
+            provManager.AddSvarAlt("Svar 3", true, fråga1.FrågaID);
 
+            fråga2 = provManager.AddFråga("Fråga B", prov4.ProvID);
+            provManager.AddSvarAlt("Svar 1", false, fråga2.FrågaID);
+            provManager.AddSvarAlt("Svar 2", false, fråga2.FrågaID);
+            provManager.AddSvarAlt("Svar 3", true, fråga2.FrågaID);
 
-            fråga2 = frågaManager.AddFråga("Fråga B", prov4.ProvID);
-            svarAltManger.AddSvarAlt("Svar 1", false, fråga2.FrågaID);
-            svarAltManger.AddSvarAlt("Svar 2", false, fråga2.FrågaID);
-            svarAltManger.AddSvarAlt("Svar 3", true, fråga2.FrågaID);
-
-            fråga3 = frågaManager.AddFråga("Fråga C", prov4.ProvID);
-            svarAltManger.AddSvarAlt("Svar 1", true, fråga3.FrågaID);
-            svarAltManger.AddSvarAlt("Svar 2", false, fråga3.FrågaID);
-            svarAltManger.AddSvarAlt("Svar 3", false, fråga3.FrågaID);
+            fråga3 = provManager.AddFråga("Fråga C", prov4.ProvID);
+            provManager.AddSvarAlt("Svar 1", true, fråga3.FrågaID);
+            provManager.AddSvarAlt("Svar 2", false, fråga3.FrågaID);
+            provManager.AddSvarAlt("Svar 3", false, fråga3.FrågaID);
 
             var prov5 = provManager.AddProv(60, "Historia");
-            fråga1 = frågaManager.AddFråga("Fråga A", prov5.ProvID);
-            svarAltManger.AddSvarAlt("Svar 1", false, fråga1.FrågaID);
-            svarAltManger.AddSvarAlt("Svar 2", false, fråga1.FrågaID);
-            svarAltManger.AddSvarAlt("Svar 3", true, fråga1.FrågaID);
+            fråga1 = provManager.AddFråga("Fråga A", prov5.ProvID);
+            provManager.AddSvarAlt("Svar 1", false, fråga1.FrågaID);
+            provManager.AddSvarAlt("Svar 2", false, fråga1.FrågaID);
+            provManager.AddSvarAlt("Svar 3", true, fråga1.FrågaID);
 
+            fråga2 = provManager.AddFråga("Fråga B", prov5.ProvID);
+            provManager.AddSvarAlt("Svar 1", false, fråga2.FrågaID);
+            provManager.AddSvarAlt("Svar 2", false, fråga2.FrågaID);
+            provManager.AddSvarAlt("Svar 3", true, fråga2.FrågaID);
 
-            fråga2 = frågaManager.AddFråga("Fråga B", prov5.ProvID);
-            svarAltManger.AddSvarAlt("Svar 1", false, fråga2.FrågaID);
-            svarAltManger.AddSvarAlt("Svar 2", false, fråga2.FrågaID);
-            svarAltManger.AddSvarAlt("Svar 3", true, fråga2.FrågaID);
-
-            fråga3 = frågaManager.AddFråga("Fråga C", prov5.ProvID);
-            svarAltManger.AddSvarAlt("Svar 1", true, fråga3.FrågaID);
-            svarAltManger.AddSvarAlt("Svar 2", false, fråga3.FrågaID);
-            svarAltManger.AddSvarAlt("Svar 3", false, fråga3.FrågaID);
+            fråga3 = provManager.AddFråga("Fråga C", prov5.ProvID);
+            provManager.AddSvarAlt("Svar 1", true, fråga3.FrågaID);
+            provManager.AddSvarAlt("Svar 2", false, fråga3.FrågaID);
+            provManager.AddSvarAlt("Svar 3", false, fråga3.FrågaID);
 
             var prov6 = provManager.AddProv(50, "Spanska");
-            fråga1 = frågaManager.AddFråga("Fråga A", prov6.ProvID);
-            svarAltManger.AddSvarAlt("Svar 1", false, fråga1.FrågaID);
-            svarAltManger.AddSvarAlt("Svar 2", false, fråga1.FrågaID);
-            svarAltManger.AddSvarAlt("Svar 3", true, fråga1.FrågaID);
+            fråga1 = provManager.AddFråga("Fråga A", prov6.ProvID);
+            provManager.AddSvarAlt("Svar 1", false, fråga1.FrågaID);
+            provManager.AddSvarAlt("Svar 2", false, fråga1.FrågaID);
+            provManager.AddSvarAlt("Svar 3", true, fråga1.FrågaID);
 
+            fråga2 = provManager.AddFråga("Fråga B", prov6.ProvID);
+            provManager.AddSvarAlt("Svar 1", false, fråga2.FrågaID);
+            provManager.AddSvarAlt("Svar 2", false, fråga2.FrågaID);
+            provManager.AddSvarAlt("Svar 3", true, fråga2.FrågaID);
 
-            fråga2 = frågaManager.AddFråga("Fråga B", prov6.ProvID);
-            svarAltManger.AddSvarAlt("Svar 1", false, fråga2.FrågaID);
-            svarAltManger.AddSvarAlt("Svar 2", false, fråga2.FrågaID);
-            svarAltManger.AddSvarAlt("Svar 3", true, fråga2.FrågaID);
-
-            fråga3 = frågaManager.AddFråga("Fråga C", prov6.ProvID);
-            svarAltManger.AddSvarAlt("Svar 1", true, fråga3.FrågaID);
-            svarAltManger.AddSvarAlt("Svar 2", false, fråga3.FrågaID);
-            svarAltManger.AddSvarAlt("Svar 3", false, fråga3.FrågaID);
-
-
-
-            
-
-
-            
+            fråga3 = provManager.AddFråga("Fråga C", prov6.ProvID);
+            provManager.AddSvarAlt("Svar 1", true, fråga3.FrågaID);
+            provManager.AddSvarAlt("Svar 2", false, fråga3.FrågaID);
+            provManager.AddSvarAlt("Svar 3", false, fråga3.FrågaID);
         }
         static void Main(string[] args)
         {
@@ -172,7 +155,6 @@ namespace SQL
 
             if (mataIn)
                 Inmatning();
-
         }
     }
 }
