@@ -44,8 +44,7 @@ namespace DataAccess
                 // Variabelnamnet _course är en konvention som är föreslagen av Microsoft.
                 // _ betyder en lokal variabel inom metoden.
                 var course = from _course in schoolContext.Courses
-                              where string.Compare(_course.CourseName , name, 
-                              StringComparison.InvariantCulture) == 0
+                              where _course.CourseName == name 
                               select _course;
                 // string.Compare är överkurs och har att göra med att om programmet hanterar data
                 // i en viss teckentabell, som Latin1 eller ASCII och databasen har en annan teckentabell,
@@ -56,7 +55,7 @@ namespace DataAccess
                 // Metoden returnerar 0 om båda är samma, -1 eller +1 beroende på på något som jag inte minns.
                 // Vi kollar om två stängar är lika och är det de, så returnerar string.Compare(...) noll.
                 // Alltså har vi hittat en kurs i databasen som heter samma sak som strängen "name".
-
+                Console.WriteLine(course.First().CourseName);
                 // Vi returnerar ett objekt till anropande program.
                 return course.First();
             }
