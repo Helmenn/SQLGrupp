@@ -96,7 +96,11 @@ namespace DataAccess
 
         public void RättaProv(int provid, string studentName)
         {
-            
+            using (var schoolContext = new SchoolContext())
+            {
+                
+                
+            }
         }
     }
 }
