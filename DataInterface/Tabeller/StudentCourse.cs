@@ -9,6 +9,7 @@ namespace SQL
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int StudentCourseID { get; set; }
         public int StudentID { get; set; }
+        public Student Student { get; set; }
         public int CourseID { get; set; }
         public Courses Course { get; set; }
     }
