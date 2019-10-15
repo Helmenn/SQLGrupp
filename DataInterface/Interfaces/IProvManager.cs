@@ -16,6 +16,7 @@ namespace DataInterface
         public IQueryable<Fråga> GetFrågorByProvID(int provid);
         // Flyttad från ISvarALtManager
         public void AddSvarAlt(string SvarAltText, bool Rätt, int FrågaID);
+        public void AddRättatSvar(int SvarID, int SvarAltID, bool Rätt);
         public void RättaProv(int provid, string studentName);
     }
 }

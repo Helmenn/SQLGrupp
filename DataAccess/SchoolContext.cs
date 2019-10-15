@@ -24,7 +24,7 @@ namespace SQL
         public DbSet<Svar> Svar { get; set; }
         public DbSet<Svaralt> Svaralt { get; set; }
         public DbSet<Provresultat> Provresultat { get; set; }
-
+        public DbSet<RättatSvar> RättatSvar { get; set; }
     }
 
 
