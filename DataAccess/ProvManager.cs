@@ -42,7 +42,7 @@ namespace DataAccess
             }
         }
 
-        public void RättaProv(int provid, int studentid)
+        public void RättaProv(int provid, string studentName)
         {
             
         }
