@@ -21,5 +21,9 @@ namespace SQL
 
         public Courses Courses { get; set; }
 
+        public ICollection<Fråga> Frågor { get; set; }
+
+        public ICollection<Provsvar> Provsvar { get; set; }
+
     }
 }

@@ -18,6 +18,6 @@ namespace SQL
         public Prov Prov { get; set; }
         public int studentID { get; set; }
         public Student Student { get; set; }
-
+        public ICollection<Svar> Svar { get; set; }
     }
 }

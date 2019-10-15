@@ -19,5 +19,6 @@ namespace SQL
         public int ProvID { get; set; }
         public Prov Prov { get; set; }
 
+        public ICollection<Svaralt> Svaralt { get; set; }
     }
 }
