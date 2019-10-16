@@ -10,13 +10,8 @@ namespace DataInterface
     {
         public Prov AddProv(int Andel, string CourseName);
         public Prov GetProv(int id);
-        // Flyttad från IFrågaManager
         public Fråga AddFråga(string text, int provID);
-        //FLyttad från IFrågaManager
         public IQueryable<Fråga> GetFrågorByProvID(int provid);
-        // Flyttad från ISvarALtManager
         public void AddSvarAlt(string SvarAltText, bool Rätt, int FrågaID);
-        public void AddRättatSvar(int SvarID, int SvarAltID, bool Rätt);
-        public void RättaProv(int provid, string studentName);
     }
 }

@@ -5,7 +5,6 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 using Microsoft.EntityFrameworkCore;
 
-
 namespace SQL
 {
     public class RättatSvar
@@ -18,11 +17,6 @@ namespace SQL
         public Svar Svar { get; set; }
         public int SvaraltID {get; set;}
         public Svaralt Svaralt { get; set; }
-
         public bool Rätt { get; set; }
-           
-
-
-
     }
 }
