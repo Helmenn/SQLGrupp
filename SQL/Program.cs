@@ -48,23 +48,29 @@ namespace SQL
             StudentManger.AddStudentToCourse("Sten", "Matte");
             StudentManger.AddStudent("Rasmus", 21);
             StudentManger.AddStudentToCourse("Rasmus", "Engelska");
-
+            
             IProvManager provManager = new ProvManager();
+            IProvsvarManager provSvarManager = new ProvsvarManager();
             var prov1 = provManager.AddProv(50, "Matte");
+            var provSvar = provSvarManager.AddSkrivetProv(prov1, StudentManger.GetStudentByName("Rasmus"));
             var fråga1 = provManager.AddFråga("Fråga A", prov1.ProvID);
+
             provManager.AddSvarAlt("Svar 1", false, fråga1.FrågaID);
-            provManager.AddSvarAlt("Svar 2", false, fråga1.FrågaID);
+            var valtSvarAlt = provManager.AddSvarAlt("Svar 2", false, fråga1.FrågaID);
             provManager.AddSvarAlt("Svar 3", true, fråga1.FrågaID);
+            provSvarManager.AddSvar(provSvar, fråga1, valtSvarAlt);
 
             var fråga2 = provManager.AddFråga("Fråga B", prov1.ProvID);
             provManager.AddSvarAlt("Svar 1", false, fråga2.FrågaID);
             provManager.AddSvarAlt("Svar 2", false, fråga2.FrågaID);
-            provManager.AddSvarAlt("Svar 3", true, fråga2.FrågaID);
-            
+            valtSvarAlt = provManager.AddSvarAlt("Svar 3", true, fråga2.FrågaID);
+            provSvarManager.AddSvar(provSvar, fråga2, valtSvarAlt);
+
             var fråga3 = provManager.AddFråga("Fråga C", prov1.ProvID);
-            provManager.AddSvarAlt("Svar 1", true, fråga3.FrågaID);
+            valtSvarAlt = provManager.AddSvarAlt("Svar 1", true, fråga3.FrågaID);
             provManager.AddSvarAlt("Svar 2", false, fråga3.FrågaID);
             provManager.AddSvarAlt("Svar 3", false, fråga3.FrågaID);
+            provSvarManager.AddSvar(provSvar, fråga3, valtSvarAlt);
 
             var prov2 = provManager.AddProv(60, "Fysik");
             fråga1 = provManager.AddFråga("Fråga A", prov2.ProvID);
