@@ -5,7 +5,6 @@ namespace SQL
     public class SchoolContext : DbContext
     {
         private const string connectionString = "Server=localhost;Database=KursElevCodeFirst;Trusted_Connection=True";
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(connectionString);
@@ -15,8 +14,6 @@ namespace SQL
         public DbSet<Teacher> Teachers { get; set; }
         public DbSet<StudentCourse> StudentCourses { get; set; }
         public DbSet<Grades> Grades { get; set; }
-
-
         public DbSet<Betygssgrad> Betygssgrad { get; set; }
         public DbSet<Fråga> Fråga { get; set; }
         public DbSet<Prov> Prov { get; set; }

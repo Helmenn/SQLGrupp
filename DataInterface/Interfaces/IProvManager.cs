@@ -12,6 +12,6 @@ namespace DataInterface
         public Prov GetProv(int id);
         public Fråga AddFråga(string text, int provID);
         public IQueryable<Fråga> GetFrågorByProvID(int provid);
-        public void AddSvarAlt(string SvarAltText, bool Rätt, int FrågaID);
+        public Svaralt AddSvarAlt(string SvarAltText, bool Rätt, int FrågaID);
     }
 }

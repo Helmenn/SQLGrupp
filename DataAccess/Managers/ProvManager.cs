@@ -61,16 +61,17 @@ namespace DataAccess
                 return allaFrågorFörProv;
             }
         }
-        public void AddSvarAlt(string SvarAltText, bool Rätt, int FrågaID)
+        public Svaralt AddSvarAlt(string SvarAltText, bool Rätt, int FrågaID)
         {
             using (var schoolContext = new SchoolContext())
             {
-                var SvarAlt = new Svaralt();
-                SvarAlt.SvaraltText = SvarAltText;
-                SvarAlt.Rätt = Rätt;
-                SvarAlt.FrågaID = FrågaID;
-                schoolContext.Svaralt.Add(SvarAlt);
+                var svarAlt = new Svaralt();
+                svarAlt.SvaraltText = SvarAltText;
+                svarAlt.Rätt = Rätt;
+                svarAlt.FrågaID = FrågaID;
+                schoolContext.Svaralt.Add(svarAlt);
                 schoolContext.SaveChanges();
+                return svarAlt;
             }
         }
         /// <summary>

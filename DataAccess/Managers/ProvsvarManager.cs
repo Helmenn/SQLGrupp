@@ -9,11 +9,27 @@ namespace DataAccess
     {
         public Provsvar AddSkrivetProv(Prov prov, Student student)
         {
-            throw new NotImplementedException();
+            using (var schoolContext = new SchoolContext())
+            {
+                var provSvar = new Provsvar();
+                provSvar.Prov = prov;
+                provSvar.Student = student;
+                schoolContext.Provsvar.Add(provSvar);
+                schoolContext.SaveChanges();
+                return provSvar;
+            }
         }
-        public Svar AddSvar(Provsvar provsvar, Fråga fråga, Svaralt svaralt)
+        public void AddSvar(Provsvar provsvar, Fråga fråga, Svaralt svaralt)
         {
-            throw new NotImplementedException();
+            using (var SchoolContext = new SchoolContext())
+            {
+                var svar = new Svar();
+                svar.ProvsvarID = provsvar.ProvsvarID;
+                svar.FrågaID = fråga.FrågaID;
+                svar.SvaraltID = svaralt.SvaraltID;
+                SchoolContext.Svar.Add(svar);
+                SchoolContext.SaveChanges();
+            }
         }
         public void AddRättatSvar(int SvarID, int SvarAltID, bool Rätt)
         {
