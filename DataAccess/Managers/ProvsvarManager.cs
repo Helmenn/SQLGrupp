@@ -1,8 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using SQL;
 using DataInterface;
+using System.Linq;
 
 namespace DataAccess
 {

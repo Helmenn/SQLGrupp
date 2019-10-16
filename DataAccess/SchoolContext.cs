@@ -26,6 +26,4 @@ namespace SQL
         public DbSet<Provresultat> Provresultat { get; set; }
         public DbSet<RättatSvar> RättatSvar { get; set; }
     }
-
-
 }
