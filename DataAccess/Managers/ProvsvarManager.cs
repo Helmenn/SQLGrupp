@@ -12,8 +12,8 @@ namespace DataAccess
             using (var schoolContext = new SchoolContext())
             {
                 var provSvar = new Provsvar();
-                provSvar.Prov = prov;
-                provSvar.Student = student;
+                provSvar.ProvID = prov.ProvID;
+                provSvar.studentID = student.StudentID;
                 schoolContext.Provsvar.Add(provSvar);
                 schoolContext.SaveChanges();
                 return provSvar;

@@ -9,7 +9,7 @@ namespace DataAccess
 {
     public class ProvManager : IProvManager
     {
-        public Prov AddProv(int Andel, string CourseName)
+        public Prov AddProv(int andel, string CourseName)
         { // Vi får in en andel i procent. Detta bestämmer hur viktigt provet är.
             // Sedan blir det ett kursnamn
             // Provet har inget eget namn,
@@ -26,8 +26,7 @@ namespace DataAccess
                 if (course != null)
                 {
                     var prov = new Prov();
-                    prov.Andel = Andel;
-                    prov.Courses = course;
+                    prov.Andel = andel;
                     prov.CourseId = course.CourseID;
                     schoolContext.Prov.Add(prov);
                     schoolContext.SaveChanges();
